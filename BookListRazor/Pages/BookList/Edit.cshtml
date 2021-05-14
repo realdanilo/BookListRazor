@@ -1,12 +1,13 @@
 ﻿@page
-@model BookListRazor.Pages.BookList.CreateModel
+@model BookListRazor.Pages.BookList.EditModel
 @{
-	ViewData["Title"] = "Create Book";
+	ViewData["Title"] = "Edit Page";
 }
 
-<h2 class="text-info">Create new book</h2>
+<h2 class="text-info">Edit Book</h2>
 <div class="border container " style="padding:30px">
 	<form method="post">
+		<input asp-for="Book.Id" type="hidden"/>
 		<div class="text-danger" asp-validation-summary="ModelOnly"></div>
 		<div class="form-group row">
 			<div class="col-3">
@@ -39,10 +40,10 @@
 		</div>
 		<div class="form-group row">
 			<div class="col-3 offset-4">
-				<input type="submit" value="Create" class="btn btn-primary form-control"
-/>			</div>
+				<input type="submit" value="Update" class="btn btn-primary form-control" />
+			</div>
 			<div class="col-3">
-				<a asp-page="Index" class="btn btn-success form-control" >Go Back</a>
+				<a asp-page="Index" class="btn btn-success form-control">Go Back</a>
 			</div>
 		</div>
 	</form>
@@ -50,5 +51,5 @@
 
 @*add jquery validation from 3rd party *@
 @section Scripts{
-	<partial name="_ValidationScriptsPartial"/>
+	<partial name="_ValidationScriptsPartial" />
 } 
