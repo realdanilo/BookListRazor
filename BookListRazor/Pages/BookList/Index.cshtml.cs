@@ -26,5 +26,15 @@ namespace BookListRazor.Pages.BookList
             //using Entity FrameworkCore
             Books = await _db.Book.ToListAsync();
         }
+
+        public async Task<IActionResult> OnPostDelete(int id)
+        {
+            Book toDeleteBook = await _db.Book.FindAsync(id);
+            if (toDeleteBook==null) { return NotFound(); }
+            _db.Book.Remove(toDeleteBook);
+            await _db.SaveChangesAsync();
+            return RedirectToPage("Index");
+
+        }
     }
 }
