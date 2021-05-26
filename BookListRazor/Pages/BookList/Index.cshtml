@@ -59,4 +59,33 @@
 			}
 		</form>
 	</div>
+
+	@*TABLE API*@
+	<div class="col-12-" style="text-align:center">
+		<br />
+		<span class="h3 text-info">OR</span>
+		<br />
+		<br />
+	</div>
+	<div class="col-12 border p-3">
+		<table id="DT_load" class="table table-stripper table-bordered" style="width:100%"> 
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Author</th>
+					<th>ISBN</th>
+					<th> </th>
+				</tr>
+			</thead>
+		</table>
+	</div>
+	@*Call js file*@
+
+	@section Scripts
+	{ 
+		<script src="~/js/bookList.js"></script>
+	} 
+
+
+	@*end container*@
 </div>
