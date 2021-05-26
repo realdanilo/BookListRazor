@@ -47,8 +47,9 @@ namespace BookListRazor.Pages.BookList
                     _db.Book.Update(Book);
                 }
                 await _db.SaveChangesAsync();
+                return RedirectToPage("Index");
             }
-            return RedirectToPage();
+            return RedirectToPage("");
         }
     }
 }
