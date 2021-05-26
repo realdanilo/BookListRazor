@@ -26,9 +26,14 @@ namespace BookListRazor
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(option=> option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            //So Controller can return 
+            services.AddControllersWithViews();
+            //Razor Pages
             services.AddRazorPages();
         }
 
+
+        //MIDDLEWARE
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -52,6 +57,9 @@ namespace BookListRazor
 
             app.UseEndpoints(endpoints =>
             {
+                //middleware for json
+                endpoints.MapControllers();
+                //middleware for razor pages
                 endpoints.MapRazorPages();
             });
         }
